@@ -1,5 +1,5 @@
-public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+public class App extends Challenge1{
+    public static void main(String[] args) {
+        helloWorld();
     }
 }
