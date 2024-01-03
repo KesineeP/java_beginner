@@ -20,7 +20,7 @@ public class Challenge2 {
         double billAmount = scanner.nextDouble();
 
         System.out.println("How many people?");
-        int peopleNumber = scanner.nextInt();
+        int peopleNumber = scanner.nextInt(); 
         scanner.close();
         
         double amount = billAmount / peopleNumber;
