@@ -17,7 +17,7 @@ public class Challenge3 {
 
         //Exercise 3 and 4
         Scanner scanner = new Scanner(System.in);
-        int randomNumber = ThreadLocalRandom.current().nextInt(1,6);
+        int randomNumber = ThreadLocalRandom.current().nextInt(1,6); 
         System.out.println("Guess a number 1-5:");
         int guessNumber = scanner.nextInt();
         
@@ -26,7 +26,7 @@ public class Challenge3 {
         }else {         
             System.out.println("Not correct! Guess again!");
             guessNumber = scanner.nextInt();
-            
+
             if(randomNumber == guessNumber) {
                 System.out.println("Correct! Aren't you lucky.");
             }else {

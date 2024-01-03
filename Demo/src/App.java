@@ -1,5 +1,5 @@
-public class App extends Challenge3{
+public class App extends Challenge4{
     public static void main(String[] args) {
-        ifThenStatement();
+        loops();
     }
 }
