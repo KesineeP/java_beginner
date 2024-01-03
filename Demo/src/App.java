@@ -1,5 +1,5 @@
-public class App extends Challenge4{
+public class App extends Challenge5{
     public static void main(String[] args) {
-        loops();
+        arrays();
     }
 }
