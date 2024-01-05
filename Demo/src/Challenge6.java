@@ -1,8 +1,13 @@
 import java.util.Scanner;
 
 public class Challenge6 {
+    static Scanner scanner = new Scanner(System.in);
+    
     public static void examResults() {
-        Scanner scanner = new Scanner(System.in);
+        exercise2();
+    }
+   
+    public static void exercise1() {
         System.out.println("How many student took the exam?");
         int numOfStudents = scanner.nextInt();
         
@@ -39,5 +44,50 @@ public class Challenge6 {
 
         System.out.println("Mean score: " + mean + "/" + maxScore +"(" + meanPercentage + "%");
         scanner.close();
+    }
+
+    public static void exercise2() {
+        String[] questions = new String[] {
+            "We are in 20th century",
+            "The United States of America is located in North America",
+            "The capital of Thailand is Bangkok",
+            "Tertles are amphibians",
+            "Michael jackson have thirty-five compilation albums",
+        };
+
+        boolean[] answers = new boolean[] {false, true, true, false, true};
+        boolean[] userAnswers = new boolean[5];
+
+        //loop questions
+        System.out.println("Please enter true/false on each stataement");
+        for(int i = 0; i < questions.length; i++) {
+            System.out.print("Is this statement true or false '" + questions[i] + "': ");
+            userAnswers[i] = scanner.nextBoolean();
+        }
+        scanner.close();
+
+        int score = 0;
+        for(int i = 0; i < answers.length; i++) {
+            if(answers[i] == userAnswers[i]) score++;
+        }
+
+        switch (score) {
+            case 5:
+                System.out.println("Excellent! Your score: " + score);
+                break;
+            case 4:
+                System.out.println("Good job! Your score: " + score);
+                break;
+            case 3:
+                System.out.println("Not bad! Your score: " + score);
+                break;
+            case 2:
+            case 1:
+                System.out.println("Not so good! Your score: " + score);
+                break;
+            default:
+                System.out.println("Google can help you! Your score: " + score);
+                break;
+        }
     }
 }
