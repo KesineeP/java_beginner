@@ -1,5 +1,5 @@
-public class App extends Challenge6{
+public class App extends GuestListProgram{
     public static void main(String[] args) {
-        examResults();
+        guestList();
     }
 }
