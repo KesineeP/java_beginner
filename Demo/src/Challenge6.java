@@ -5,7 +5,7 @@ public class Challenge6 {
     static Scanner scanner = new Scanner(System.in);
     
     public static void examResults() {
-        exercise3();
+        exercise4();
     }
    
     public static void exercise1() {
@@ -94,25 +94,6 @@ public class Challenge6 {
     }
 
     public static void exercise3() {
-        // int randomNumber = ThreadLocalRandom.current().nextInt(1,101);
-        // System.out.println("Guess a number 1-100:");
-        // int guess = scanner.nextInt();
-        // int countGuess = 0;
-
-        // do {
-        //     if(guess > randomNumber) {
-        //         System.out.println("LOWER");
-        //         System.out.println("Guess number again:");
-        //         guess = scanner.nextInt();
-        //         countGuess++;
-        //     }else {
-        //         System.out.println("HIGHER");
-        //         System.out.println("Guess number again:");
-        //         guess = scanner.nextInt();
-        //         countGuess++;
-        //     }
-        // }while(randomNumber != guess);      
-        // System.out.println("Correct! It took you " + countGuess + " times to guess the correct number!");
         System.out.println("-----Guess my number game-----");
         System.out.println("-----Rules-----");
         System.out.println("Think of a number from 1-100 and I will try to guess it");
@@ -145,10 +126,42 @@ public class Challenge6 {
             }
             
         }
+    }
 
+    public static void exercise4() {
+        System.out.println("-----Guess my number game-----");
+        System.out.println("-----Rules-----");
+        System.out.println("Think of a number from 1-100 and I will try to guess it");
+        System.out.println("Enter \"higher\" if my guess is too low");         
+        System.out.println("Enter \"lower\" if my guess is too high");  
         
-        
-      
+        String input;
+        int min = 1;
+        int max = 100;
+        int guess = 50;
 
+        while(true) {
+            System.out.println("I'm guessing: " + guess);
+            System.out.println("Your response: ");
+            input = scanner.next();
+            
+            if(input.equals("higher")) {
+                min = guess + 1;
+            }else if(input.equals("lower")) {
+                max = guess - 1;
+            }else if(input.equals("correct")) {
+                System.out.println("Congrat! " + guess + " is correct!");
+                break;
+            }
+
+            guess = (min + max) / 2;
+            
+            if(min == max+1) {
+                System.out.println("That is not possible. Let's try again");
+                min = 1;
+                max = 100;
+                guess = 50;
+            }
+        }
     }
 }
